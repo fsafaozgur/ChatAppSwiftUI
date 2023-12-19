@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		068BC7632B2F91B5005DD143 /* ChatAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BC7622B2F91B5005DD143 /* ChatAppSwiftUIApp.swift */; };
-		068BC7652B2F91B5005DD143 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BC7642B2F91B5005DD143 /* ContentView.swift */; };
+		068BC7652B2F91B5005DD143 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BC7642B2F91B5005DD143 /* ChatView.swift */; };
 		068BC7672B2F91B6005DD143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068BC7662B2F91B6005DD143 /* Assets.xcassets */; };
 		068BC76A2B2F91B6005DD143 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068BC7692B2F91B6005DD143 /* Preview Assets.xcassets */; };
 		068BC7712B2F9322005DD143 /* TopArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BC7702B2F9322005DD143 /* TopArea.swift */; };
@@ -20,12 +20,14 @@
 		068BC7842B2FC19F005DD143 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 068BC7832B2FC19F005DD143 /* FirebaseFirestoreSwift */; };
 		068BC7862B2FC594005DD143 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BC7852B2FC594005DD143 /* WebService.swift */; };
 		068BC7882B2FD406005DD143 /* UserFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BC7872B2FD406005DD143 /* UserFeature.swift */; };
+		068ED6752B31459100AE84AB /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068ED6742B31459100AE84AB /* ChatViewModel.swift */; };
+		068ED6772B31709E00AE84AB /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068ED6762B31709E00AE84AB /* ErrorType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		068BC75F2B2F91B5005DD143 /* ChatAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068BC7622B2F91B5005DD143 /* ChatAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppSwiftUIApp.swift; sourceTree = "<group>"; };
-		068BC7642B2F91B5005DD143 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		068BC7642B2F91B5005DD143 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		068BC7662B2F91B6005DD143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		068BC7692B2F91B6005DD143 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		068BC7702B2F9322005DD143 /* TopArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopArea.swift; sourceTree = "<group>"; };
@@ -35,6 +37,8 @@
 		068BC77E2B2FC0A5005DD143 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		068BC7852B2FC594005DD143 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		068BC7872B2FD406005DD143 /* UserFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeature.swift; sourceTree = "<group>"; };
+		068ED6742B31459100AE84AB /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		068ED6762B31709E00AE84AB /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,13 +73,14 @@
 		068BC7612B2F91B5005DD143 /* ChatAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				068ED6782B3174FB00AE84AB /* Services */,
+				068ED6732B31454D00AE84AB /* ViewModel */,
 				068BC7752B2F98C0005DD143 /* View */,
 				068BC7722B2F9813005DD143 /* Model */,
 				068BC7622B2F91B5005DD143 /* ChatAppSwiftUIApp.swift */,
 				068BC7662B2F91B6005DD143 /* Assets.xcassets */,
 				068BC77E2B2FC0A5005DD143 /* GoogleService-Info.plist */,
 				068BC7682B2F91B6005DD143 /* Preview Content */,
-				068BC7852B2FC594005DD143 /* WebService.swift */,
 			);
 			path = ChatAppSwiftUI;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 			children = (
 				068BC7732B2F982A005DD143 /* Message.swift */,
 				068BC7872B2FD406005DD143 /* UserFeature.swift */,
+				068ED6762B31709E00AE84AB /* ErrorType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,7 +115,7 @@
 		068BC7762B2F98CA005DD143 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				068BC7642B2F91B5005DD143 /* ContentView.swift */,
+				068BC7642B2F91B5005DD143 /* ChatView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -122,6 +128,22 @@
 				068BC77C2B2FB97F005DD143 /* MessageField.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		068ED6732B31454D00AE84AB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				068ED6742B31459100AE84AB /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		068ED6782B3174FB00AE84AB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				068BC7852B2FC594005DD143 /* WebService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,11 +224,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				068BC7652B2F91B5005DD143 /* ContentView.swift in Sources */,
+				068BC7652B2F91B5005DD143 /* ChatView.swift in Sources */,
+				068ED6752B31459100AE84AB /* ChatViewModel.swift in Sources */,
 				068BC7742B2F982A005DD143 /* Message.swift in Sources */,
 				068BC7862B2FC594005DD143 /* WebService.swift in Sources */,
 				068BC77B2B2F9923005DD143 /* MessageBody.swift in Sources */,
 				068BC7712B2F9322005DD143 /* TopArea.swift in Sources */,
+				068ED6772B31709E00AE84AB /* ErrorType.swift in Sources */,
 				068BC77D2B2FB97F005DD143 /* MessageField.swift in Sources */,
 				068BC7632B2F91B5005DD143 /* ChatAppSwiftUIApp.swift in Sources */,
 				068BC7882B2FD406005DD143 /* UserFeature.swift in Sources */,

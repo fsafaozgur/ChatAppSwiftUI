@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ChatView.swift
 //  ChatAppSwiftUI
 //
 //  Created by Safa on 17.12.2023.
@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ChatView: View {
     
-    @StateObject var messageService = WebService()
+    @StateObject var viewModel = ChatViewModel()
     @State var user : UserFeature = .Receiver
+    @State var hasError : Bool = false
+    
     
     var body: some View {
         VStack{
@@ -20,29 +22,34 @@ struct ContentView: View {
                 
                 ScrollViewReader { proxy in
                     ScrollView(){
-                        ForEach(messageService.messages, id: \.id) { message in
+                        ForEach(viewModel.messages, id: \.id) { message in
                             MessageBody(message: message, user: $user)
                         }
                         
                     }
                     .padding(.top)
                     .background(.white)
-                    .onChange(of: messageService.lastMessageId) { id in
+                    .onChange(of: viewModel.lastMessageId) { id in
                         withAnimation {
                             proxy.scrollTo(id, anchor: .bottom)
                         }
                     }
-                    .onAppear(){
-                        proxy.scrollTo(messageService.lastMessageId, anchor: .bottom)
-                    }
-                    
                 }
 
                 
             }
             .background(Color("Orange"))
             
-            MessageField(messagesService: messageService, user: $user)
+            MessageField(viewModel: viewModel, user: $user)
+        }
+        .onAppear(){
+            Task{
+                await viewModel.getMessages()
+            }
+
+        }
+        .alert(isPresented: $viewModel.hasError) {
+            Alert(title: Text("Error!"), message: Text(self.viewModel.error?.description ?? "Some Error"), dismissButton: .default(Text("OK")))
         }
         
     }
@@ -50,6 +57,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ChatView()
     }
 }

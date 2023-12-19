@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MessageField: View {
-    @ObservedObject var messagesService: WebService
+    @ObservedObject var viewModel: ChatViewModel
     @State var message = ""
     @Binding var user : UserFeature
     
@@ -16,7 +16,7 @@ struct MessageField: View {
         HStack{
             CustomTextField(placeHolder: Text("Enter your message"), text: $message)
             Button {
-                messagesService.sendMesages(text: message, isReceiver: user.userState)
+                viewModel.sendMesages(text: message, isReceiver: user.userState)
                 message = ""
             } label: {
                 Image(systemName: "paperplane.fill")
