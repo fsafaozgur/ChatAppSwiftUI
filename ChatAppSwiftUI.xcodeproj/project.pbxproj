@@ -20,6 +20,8 @@
 		068BC7842B2FC19F005DD143 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 068BC7832B2FC19F005DD143 /* FirebaseFirestoreSwift */; };
 		068BC7862B2FC594005DD143 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BC7852B2FC594005DD143 /* WebService.swift */; };
 		068BC7882B2FD406005DD143 /* UserFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BC7872B2FD406005DD143 /* UserFeature.swift */; };
+		068CC53D2B32A6EA006D2D80 /* Firestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CC53C2B32A6EA006D2D80 /* Firestore.swift */; };
+		068CC5412B32AA55006D2D80 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068CC5402B32AA55006D2D80 /* Database.swift */; };
 		068ED6752B31459100AE84AB /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068ED6742B31459100AE84AB /* ChatViewModel.swift */; };
 		068ED6772B31709E00AE84AB /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068ED6762B31709E00AE84AB /* ErrorType.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +39,8 @@
 		068BC77E2B2FC0A5005DD143 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		068BC7852B2FC594005DD143 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		068BC7872B2FD406005DD143 /* UserFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeature.swift; sourceTree = "<group>"; };
+		068CC53C2B32A6EA006D2D80 /* Firestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firestore.swift; sourceTree = "<group>"; };
+		068CC5402B32AA55006D2D80 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		068ED6742B31459100AE84AB /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		068ED6762B31709E00AE84AB /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +77,7 @@
 		068BC7612B2F91B5005DD143 /* ChatAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				068CC53B2B32A695006D2D80 /* Database */,
 				068ED6782B3174FB00AE84AB /* Services */,
 				068ED6732B31454D00AE84AB /* ViewModel */,
 				068BC7752B2F98C0005DD143 /* View */,
@@ -128,6 +133,31 @@
 				068BC77C2B2FB97F005DD143 /* MessageField.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		068CC53B2B32A695006D2D80 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				068CC53F2B32AA2C006D2D80 /* Core */,
+				068CC53E2B32AA13006D2D80 /* Firestore */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		068CC53E2B32AA13006D2D80 /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				068CC53C2B32A6EA006D2D80 /* Firestore.swift */,
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
+		068CC53F2B32AA2C006D2D80 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				068CC5402B32AA55006D2D80 /* Database.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		068ED6732B31454D00AE84AB /* ViewModel */ = {
@@ -225,10 +255,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				068BC7652B2F91B5005DD143 /* ChatView.swift in Sources */,
+				068CC53D2B32A6EA006D2D80 /* Firestore.swift in Sources */,
 				068ED6752B31459100AE84AB /* ChatViewModel.swift in Sources */,
 				068BC7742B2F982A005DD143 /* Message.swift in Sources */,
 				068BC7862B2FC594005DD143 /* WebService.swift in Sources */,
 				068BC77B2B2F9923005DD143 /* MessageBody.swift in Sources */,
+				068CC5412B32AA55006D2D80 /* Database.swift in Sources */,
 				068BC7712B2F9322005DD143 /* TopArea.swift in Sources */,
 				068ED6772B31709E00AE84AB /* ErrorType.swift in Sources */,
 				068BC77D2B2FB97F005DD143 /* MessageField.swift in Sources */,

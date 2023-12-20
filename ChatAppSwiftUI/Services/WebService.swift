@@ -9,48 +9,34 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-class WebService : ObservableObject {
-    
-    //GoogleService-Info.plist should be added to .gitignore but because of educational practices not be done
-    
-    let db = Firestore.firestore()
-    
-    
-    func getMessages<T: Codable>(collectionName : String, type: T.Type, completition: @escaping ([T]?, ErrorType?) -> Void) {
-        
-        db.collection(collectionName).addSnapshotListener { querySnapshot, error in
-            
-            if error != nil {
-                completition(nil, .QueryError)
-            }
-            
-            guard let documents = querySnapshot?.documents else {
-                completition(nil, .DatabaseError)
-                return
-            }
-             
-            let datas = documents.compactMap {document -> T? in
-                do {
-                    return try document.data(as: T.self)
-                }catch{
-                    completition(nil, .InvalidData)
-                    return nil
-                }
-            }
-    
-            completition(datas, nil)
-            
 
+class WebService {
+    
+    
+    var databaseService : DataBase
+    
+    //In case of using different database service, Strategy design pattern be applied
+    init(databaseService: DataBase) {
+        self.databaseService = databaseService
+    }
+    
+    func getAllMessages<T: Codable>(collectionOrTableName : String, type: T.Type, completition: @escaping ([T]?, ErrorType?) -> Void) {
+        
+        databaseService.getAllMessages(collectionOrTableName: collectionOrTableName, type: T.self) { datas, error in
+            completition(datas, error)
+       
         }
         
     }
     
-    func sendMesages<T:Codable>(collectionName: String, data: T) throws {
+    func sendMesages<T:Codable>(collectionOrTableName: String, data: T) throws {
+        
         do{
-            try db.collection(collectionName).document().setData(from: data)
-        }catch{
-            throw ErrorType.SendError
+            try databaseService.sendMesages(collectionOrTableName: collectionOrTableName, data: data)
+        }catch(let error){
+            throw error
         }
+        
     }
     
 }

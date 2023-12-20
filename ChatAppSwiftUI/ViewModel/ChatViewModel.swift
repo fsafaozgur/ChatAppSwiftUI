@@ -9,7 +9,10 @@ import Foundation
 
 
 class ChatViewModel : ObservableObject {
-    var service : WebService = WebService()
+    
+    //In this project, we chose FireBase Firestore as a database service
+    var service : WebService = WebService(databaseService: FireStore())
+    
     @Published var messages: [Message] = []
     @Published var lastMessageId = ""
     @Published var error: ErrorType?
@@ -17,7 +20,7 @@ class ChatViewModel : ObservableObject {
 
     
     func getMessages() async {
-        service.getMessages(collectionName: "messages", type: Message.self) { [weak self] messages, error in
+        service.getAllMessages(collectionOrTableName: "messages", type: Message.self) { [weak self] messages, error in
             
             if error != nil {
                 self?.hasError = true
@@ -40,7 +43,7 @@ class ChatViewModel : ObservableObject {
         
         let newMessage = Message(id: "\(UUID())", text: text, isReceiver: !isReceiver, messageTime: Date())
         do{
-            try service.sendMesages(collectionName: "messages", data: newMessage)
+            try service.sendMesages(collectionOrTableName: "messages", data: newMessage)
         }catch{
             hasError = true
             self.error = .SendError
