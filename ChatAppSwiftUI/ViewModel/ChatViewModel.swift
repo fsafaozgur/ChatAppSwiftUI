@@ -11,13 +11,20 @@ import Foundation
 class ChatViewModel : ObservableObject {
     
     //In this project, we chose FireBase Firestore as a database service
-    var service : WebService = WebService(databaseService: FireStore())
+    var service : Service
     
     @Published var messages: [Message] = []
     @Published var lastMessageId = ""
     @Published var error: ErrorType?
     @Published var hasError : Bool = false
 
+    init(){
+        self.service = WebService(databaseService: FireStore())
+    }
+    
+    init(service : Service){
+        self.service = service
+    }
     
     func getMessages() async {
         service.getAllMessages(collectionOrTableName: "messages", type: Message.self) { [weak self] messages, error in

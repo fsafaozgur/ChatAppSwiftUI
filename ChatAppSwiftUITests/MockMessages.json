@@ -1,0 +1,21 @@
+[
+        {
+          "id": "DE7C0BE0-3CB0-4CA2-AA29-213FF51A241A",
+          "isReceiver": false,
+          "messageTime": 1703139291,
+          "text": "Mock text1"
+        },
+        {
+          "id": "DE7C0BE0-3CB0-4CA2-AA29-213FF51A241B",
+          "isReceiver": true,
+          "messageTime": 1703139351,
+          "text": "Mock text5"
+        },
+	{
+          "id": "DE7C0BE0-3CB0-4CA2-AA29-213FF51A241C",
+          "isReceiver": false,
+          "messageTime": 1703139411,
+          "text": "Mock text3"
+        }
+ ]
+    

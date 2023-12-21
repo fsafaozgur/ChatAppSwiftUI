@@ -6,11 +6,19 @@
 //
 
 import Foundation
-import FirebaseFirestore
-import FirebaseFirestoreSwift
 
 
-class WebService {
+protocol Service {
+    
+    func getAllMessages<T: Codable>(collectionOrTableName : String, type: T.Type, completition: @escaping ([T]?, ErrorType?) -> Void)
+    
+    func sendMesages<T:Codable>(collectionOrTableName: String, data: T) throws
+    
+}
+
+
+
+class WebService : Service {
     
     
     var databaseService : DataBase
