@@ -8,8 +8,8 @@
 import Foundation
 
 struct Message : Codable, Identifiable {
-    var id: String
-    var text: String
-    var isReceiver : Bool
-    var messageTime: Date
+    let id: String
+    let text: String
+    let isReceiver : Bool
+    let messageTime: Date
 }
