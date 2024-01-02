@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseAuth
 
 
 class FireStore : DataBase {
@@ -18,7 +19,8 @@ class FireStore : DataBase {
 
     func getAllMessages<T: Codable>(collectionOrTableName: String, type: T.Type, completition: @escaping ([T]?, ErrorType?) -> Void) {
         
-        db.collection(collectionOrTableName).addSnapshotListener { querySnapshot, error in
+        let ownerId = Auth.auth().currentUser?.uid
+        db.collection(collectionOrTableName).whereField("ownerId", isEqualTo: ownerId).addSnapshotListener { querySnapshot, error in
             
             if error != nil {
                 completition(nil, .QueryError)

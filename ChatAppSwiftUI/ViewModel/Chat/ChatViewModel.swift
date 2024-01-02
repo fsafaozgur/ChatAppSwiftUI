@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 
 class ChatViewModel : ObservableObject {
@@ -48,7 +49,8 @@ class ChatViewModel : ObservableObject {
     
     func sendMesages(text: String, isReceiver: Bool) {
         
-        let newMessage = Message(id: "\(UUID())", text: text, isReceiver: !isReceiver, messageTime: Date())
+        let ownerId = Auth.auth().currentUser?.uid
+        let newMessage = Message(id: "\(UUID())", ownerId: ownerId ?? "", text: text, isReceiver: !isReceiver, messageTime: Date())
         do{
             try service.sendMesages(collectionOrTableName: "messages", data: newMessage)
         }catch{
