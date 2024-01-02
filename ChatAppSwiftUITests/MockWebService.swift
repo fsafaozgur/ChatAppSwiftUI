@@ -12,7 +12,7 @@ import FirebaseFirestore
 class MockWebService : Service, Mockable {
 
     
-    func getAllMessages<T: Codable>(collectionOrTableName: String, type: T.Type, completition: @escaping ([T]?, ErrorType?) -> Void) {
+    func getAllMessages<T: Codable>(collectionOrTableName: String, userIdColName: String, type: T.Type, completition: @escaping ([T]?, ErrorType?) -> Void) {
 
         
         loadFromJson(jsonName: "MockMessages", type: T.self) { messages, error in

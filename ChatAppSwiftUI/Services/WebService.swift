@@ -10,7 +10,7 @@ import Foundation
 
 protocol Service {
     
-    func getAllMessages<T: Codable>(collectionOrTableName : String, type: T.Type, completition: @escaping ([T]?, ErrorType?) -> Void)
+    func getAllMessages<T: Codable>(collectionOrTableName : String, userIdColName: String, type: T.Type, completition: @escaping ([T]?, ErrorType?) -> Void)
     
     func sendMesages<T:Codable>(collectionOrTableName: String, data: T) throws
     
@@ -28,9 +28,9 @@ class WebService : Service {
         self.databaseService = databaseService
     }
     
-    func getAllMessages<T: Codable>(collectionOrTableName : String, type: T.Type, completition: @escaping ([T]?, ErrorType?) -> Void) {
+    func getAllMessages<T: Codable>(collectionOrTableName : String, userIdColName: String, type: T.Type, completition: @escaping ([T]?, ErrorType?) -> Void) {
         
-        databaseService.getAllMessages(collectionOrTableName: collectionOrTableName, type: T.self) { datas, error in
+        databaseService.getAllMessages(collectionOrTableName: collectionOrTableName, userIdColName: userIdColName, type: T.self) { datas, error in
             completition(datas, error)
        
         }

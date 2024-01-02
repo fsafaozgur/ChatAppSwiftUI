@@ -2,19 +2,19 @@
         {
           "id": "DE7C0BE0-3CB0-4CA2-AA29-213FF51A241A",
           "isReceiver": false,
-          "messageTime": 1703139291,
+          "messageTime": 1703139291,          "ownerId":"SE9C0BA1-3CB0-4CA2-AA29-21SE9C0BA1" ,
           "text": "Mock text1"
         },
         {
           "id": "DE7C0BE0-3CB0-4CA2-AA29-213FF51A241B",
           "isReceiver": true,
-          "messageTime": 1703139351,
+          "messageTime": 1703139351,          "ownerId":"SE9C0BA1-3CB0-4CA2-AA29-21SE9C0BA1" ,
           "text": "Mock text5"
         },
 	{
           "id": "DE7C0BE0-3CB0-4CA2-AA29-213FF51A241C",
           "isReceiver": false,
-          "messageTime": 1703139411,
+          "messageTime": 1703139411,          "ownerId":"SE9C0BA1-3CB0-4CA2-AA29-21SE9C0BA1" ,
           "text": "Mock text3"
         }
  ]

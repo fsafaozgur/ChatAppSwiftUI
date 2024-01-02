@@ -11,7 +11,6 @@ import FirebaseAuth
 
 class ChatViewModel : ObservableObject {
     
-    //In this project, we chose FireBase Firestore as a database service
     var service : Service
     
     @Published var messages: [Message] = []
@@ -19,16 +18,12 @@ class ChatViewModel : ObservableObject {
     @Published var error: ErrorType?
     @Published var hasError : Bool = false
 
-    init(){
-        self.service = WebService(databaseService: FireStore())
-    }
-    
     init(service : Service){
         self.service = service
     }
     
     func getMessages() async {
-        service.getAllMessages(collectionOrTableName: "messages", type: Message.self) { [weak self] messages, error in
+        service.getAllMessages(collectionOrTableName: "messages", userIdColName: "ownerId", type: Message.self) { [weak self] messages, error in
             
             if error != nil {
                 self?.hasError = true
@@ -49,8 +44,8 @@ class ChatViewModel : ObservableObject {
     
     func sendMesages(text: String, isReceiver: Bool) {
         
-        let ownerId = Auth.auth().currentUser?.uid
-        let newMessage = Message(id: "\(UUID())", ownerId: ownerId ?? "", text: text, isReceiver: !isReceiver, messageTime: Date())
+        let userId = Auth.auth().currentUser?.uid
+        let newMessage = Message(id: "\(UUID())", ownerId: userId ?? "", text: text, isReceiver: !isReceiver, messageTime: Date())
         do{
             try service.sendMesages(collectionOrTableName: "messages", data: newMessage)
         }catch{

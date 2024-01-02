@@ -17,10 +17,10 @@ class FireStore : DataBase {
     //GoogleService-Info.plist should be added to .gitignore but because of educational practices not be done
     let db = Firestore.firestore()
 
-    func getAllMessages<T: Codable>(collectionOrTableName: String, type: T.Type, completition: @escaping ([T]?, ErrorType?) -> Void) {
+    func getAllMessages<T: Codable>(collectionOrTableName: String, userIdColName: String, type: T.Type, completition: @escaping ([T]?, ErrorType?) -> Void) {
         
-        let ownerId = Auth.auth().currentUser?.uid
-        db.collection(collectionOrTableName).whereField("ownerId", isEqualTo: ownerId).addSnapshotListener { querySnapshot, error in
+        let userId = Auth.auth().currentUser?.uid
+        db.collection(collectionOrTableName).whereField(userIdColName, isEqualTo: userId).addSnapshotListener { querySnapshot, error in
             
             if error != nil {
                 completition(nil, .QueryError)

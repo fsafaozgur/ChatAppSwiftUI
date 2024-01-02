@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		063323902B43D38A00ADEC15 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0633238F2B43D38A00ADEC15 /* FirebaseAuth */; };
 		068BC7632B2F91B5005DD143 /* ChatAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BC7622B2F91B5005DD143 /* ChatAppSwiftUIApp.swift */; };
 		068BC7652B2F91B5005DD143 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BC7642B2F91B5005DD143 /* ChatView.swift */; };
 		068BC7672B2F91B6005DD143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068BC7662B2F91B6005DD143 /* Assets.xcassets */; };
@@ -94,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A5305F2B34C55B007E0607 /* FirebaseFirestore in Frameworks */,
+				063323902B43D38A00ADEC15 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +344,7 @@
 			name = ChatAppSwiftUITests;
 			packageProductDependencies = (
 				06A5305E2B34C55B007E0607 /* FirebaseFirestore */,
+				0633238F2B43D38A00ADEC15 /* FirebaseAuth */,
 			);
 			productName = ChatAppSwiftUITests;
 			productReference = 06A530432B34B18C007E0607 /* ChatAppSwiftUITests.xctest */;
@@ -708,6 +711,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0633238F2B43D38A00ADEC15 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 068BC7802B2FC19F005DD143 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
 		068BC7812B2FC19F005DD143 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 068BC7802B2FC19F005DD143 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

@@ -10,7 +10,9 @@ import FirebaseAuth
 
 struct ChatView: View {
     
-    @StateObject var viewModel = ChatViewModel()
+    
+    //In this project, we chose FireBase Firestore as a database service
+    @StateObject var viewModel = ChatViewModel(service: WebService(databaseService: FireStore()))
     @State var user : UserFeature = .Receiver
     @State var hasError : Bool = false
     
