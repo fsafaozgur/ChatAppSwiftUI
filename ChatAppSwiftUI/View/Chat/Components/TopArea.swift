@@ -40,7 +40,7 @@ struct TopArea: View {
 
         }
         .frame(width: UIScreen.main.bounds.width, alignment: .leading)
-        .background(Color("Orange"))
+        .background(Color.topAreaBackground)
     }
 }
 

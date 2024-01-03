@@ -59,7 +59,7 @@ struct SignupView: View {
                 }
                 .padding()
                 .ignoresSafeArea(.all)
-                .background(Color("Orange"))
+                .background(Color.signUpBackground)
                 .navigationTitle("Create New Account")
                 
             }

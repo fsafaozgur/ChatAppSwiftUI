@@ -30,7 +30,7 @@ struct MessageBody: View {
 
                 
             }
-            .background(message.isReceiver == user.userState  ? Color("Gray") : Color("Orange"))
+            .background(message.isReceiver == user.userState  ? Color.messageGray : Color.messageOrange)
             .cornerRadius(35)
             .frame(maxWidth: UIScreen.main.bounds.width * 0.7, alignment: message.isReceiver == user.userState ? .leading : .trailing)
             

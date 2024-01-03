@@ -43,7 +43,7 @@ struct ChatView: View {
                     
                     
                 }
-                .background(Color("Orange"))
+                .background(Color.chatBackground)
                 
                 MessageField(viewModel: viewModel, user: $user)
             }

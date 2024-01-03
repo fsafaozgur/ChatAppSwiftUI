@@ -37,6 +37,7 @@
 		06A530572B34B222007E0607 /* ChatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A530552B34B222007E0607 /* ChatViewModelTests.swift */; };
 		06A5305F2B34C55B007E0607 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 06A5305E2B34C55B007E0607 /* FirebaseFirestore */; };
 		06A530752B34DEF7007E0607 /* MockMessages.json in Resources */ = {isa = PBXBuildFile; fileRef = 06A530742B34DEF6007E0607 /* MockMessages.json */; };
+		06AC48692B45FA08009F38F0 /* Color+ChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC48682B45FA08009F38F0 /* Color+ChatApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		06A5304F2B34B1B6007E0607 /* MockWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWebService.swift; sourceTree = "<group>"; };
 		06A530552B34B222007E0607 /* ChatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModelTests.swift; sourceTree = "<group>"; };
 		06A530742B34DEF6007E0607 /* MockMessages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockMessages.json; sourceTree = "<group>"; };
+		06AC48682B45FA08009F38F0 /* Color+ChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ChatApp.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		068BC7612B2F91B5005DD143 /* ChatAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				06AC48672B45F889009F38F0 /* Extensions */,
 				068CC53B2B32A695006D2D80 /* Database */,
 				068ED6782B3174FB00AE84AB /* Services */,
 				068ED6732B31454D00AE84AB /* ViewModel */,
@@ -303,6 +306,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		06AC48672B45F889009F38F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				06AC48682B45FA08009F38F0 /* Color+ChatApp.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -422,6 +433,7 @@
 				068BC7652B2F91B5005DD143 /* ChatView.swift in Sources */,
 				068CC53D2B32A6EA006D2D80 /* Firestore.swift in Sources */,
 				068ED6752B31459100AE84AB /* ChatViewModel.swift in Sources */,
+				06AC48692B45FA08009F38F0 /* Color+ChatApp.swift in Sources */,
 				068BC7742B2F982A005DD143 /* Message.swift in Sources */,
 				068BC7862B2FC594005DD143 /* WebService.swift in Sources */,
 				068BC77B2B2F9923005DD143 /* MessageBody.swift in Sources */,

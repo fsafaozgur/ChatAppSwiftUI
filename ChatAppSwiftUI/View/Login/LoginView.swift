@@ -61,7 +61,7 @@ struct LoginView: View {
                 }
                 .padding()
                 .ignoresSafeArea(.all)
-                .background(Color("Orange"))
+                .background(Color.loginBackground)
                 .navigationTitle("CHAT APP LOGIN")
                 
             }
